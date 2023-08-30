@@ -1,4 +1,16 @@
 'use strict';
+
+const library = {
+  collection: [],
+  addToLibrary: (book) => {
+    library.collection.push(book);
+  },
+  removefromLibrary: (book) => {
+      let bookIndex = library.collection.indexOf(book);
+      library.collection.splice(bookIndex, 1);
+  }
+}
+
 class Book {
     constructor(title, author, pages, yearPublished, hasRead) {
         this.bookInfo = () => {
@@ -21,6 +33,6 @@ class Book {
 }
 const everyoneInThisRoom = new Book("Everyone in This Room Will Someday Be Dead", "Emily R. Austin", 256, 2021, false);
 const addBooksDiv = document.querySelector(".add_books");
-addBooksDiv ? addBooksDiv.innerHTML = everyoneInThisRoom.bookInfo()
+addBooksDiv ? addBooksDiv.textContent = everyoneInThisRoom.bookInfo()
     : console.log("No 'add_book's div found");
 //# sourceMappingURL=library.js.map
