@@ -1,29 +1,26 @@
 'use strict';
-
 class Book {
-  constructor(title, author, pages, yearPublished, hasRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.yearPublished = yearPublished;
-    this.hasRead = hasRead;
-  }
-
-  getReadStatus(){
-    return this.hasRead;
-  };
-  setReadStatus(binaryNum){
-    binaryNum === 1 ? this.hasRead = true : this.hasRead = false
-  }
-
+    constructor(title, author, pages, yearPublished, hasRead) {
+        this.bookInfo = () => {
+            const { title, author, pages, yearPublished, hasRead } = this;
+            return `Title: ${title},\nAuthor: ${author}\nPages: ${pages}\nYear published: ${yearPublished}\nRead yet? ${hasRead}`;
+        };
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.yearPublished = yearPublished;
+        this.hasRead = hasRead;
+    }
+    getReadStatus() {
+        return this.hasRead;
+    }
+    ;
+    setReadStatus(binaryNum) {
+        binaryNum === 1 ? this.hasRead = true : this.hasRead = false;
+    }
 }
-
-// Books
-
-const everyoneInThisRoom = new Book("Everyone in This Room Will Someday Be Dead", "Emily R. Austin", 256, 2021, false)
-
-console.log(everyoneInThisRoom);
-
-everyoneInThisRoom.setReadStatus(1)
-
-console.log(everyoneInThisRoom);
+const everyoneInThisRoom = new Book("Everyone in This Room Will Someday Be Dead", "Emily R. Austin", 256, 2021, false);
+const addBooksDiv = document.querySelector(".add_books");
+addBooksDiv ? addBooksDiv.innerHTML = everyoneInThisRoom.bookInfo()
+    : console.log("No 'add_book's div found");
+//# sourceMappingURL=library.js.map
