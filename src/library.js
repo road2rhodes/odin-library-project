@@ -35,7 +35,8 @@ function addBookCard(title, author, pages,yearPublished, hasRead) {
 
   for (const prop in newBook) {
 
-    let propName = prop[0].toUpperCase()+prop.slice(1)
+    // Abstract away background processes with variables
+    let propName = prop[0].toUpperCase()+prop.slice(1) // Capitalize properties
     let propValue = newBook[prop]
 
     let temp = document.createElement("p")
