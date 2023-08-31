@@ -50,9 +50,8 @@ function addBookCard(title, author, pages,yearPublished, hasRead) {
         
         bookCardContainer.appendChild(temp)
   }
-
-  document.body.appendChild(bookCardContainer);
+  const booksDiv = document.querySelector(".books");
+  booksDiv.appendChild(bookCardContainer);
 
 }
 
-const addBooksDiv = document.querySelector(".add_books");
