@@ -8,10 +8,27 @@
   font-family: 'Raleway', Verdana, Geneva, Tahoma, sans-serif;
 }
 
+// variables
+
+@mixin height {
+  height: 100%;
+}
+
 //  Blocks
 
 #site_container {
   height: 100vh;
+}
+
+#library_container {
+  display: flex;
+  @include height;
+}
+
+#sidebar {
+  width: max(400px, 25%);
+  @include height;
+  background-color: red;
 }
 
 .books {

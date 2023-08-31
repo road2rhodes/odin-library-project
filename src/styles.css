@@ -13,8 +13,25 @@
   height: 100vh;
 }
 
+#library_container {
+  display: flex;
+  height: 100%;
+}
+
+#sidebar {
+  width: max(400px, 25%);
+  height: 100%;
+  background-color: red;
+}
+
 .books {
   display: grid;
   grid-template: repeat(3, 1fr)/repeat(3, 400px);
-  row-gap: 1.5rem;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 400px;
+  gap: 1rem;
+}
+.books .book-card {
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
 }/*# sourceMappingURL=styles.css.map */
