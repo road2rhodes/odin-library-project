@@ -34,16 +34,25 @@ function addBookCard(title, author, pages,yearPublished, hasRead) {
 
   let newBook = new Book(title, author, pages, yearPublished, hasRead);
 
+  let bookCardContainer = document.createElement("div")
+        bookCardContainer.className = `book-card`
+
   for (const prop in newBook) {
 
     // Abstract away background processes with variables
     let propName = prop[0].toUpperCase()+prop.slice(1) // Capitalize properties
     let propValue = newBook[prop]
 
+    
+
     let temp = document.createElement("p")
         temp.innerHTML = `<strong>${propName}</strong>: ${propValue}`;
-        document.body.appendChild(temp)
+        
+        bookCardContainer.appendChild(temp)
   }
+
+  document.body.appendChild(bookCardContainer);
+
 }
 
 const addBooksDiv = document.querySelector(".add_books");
