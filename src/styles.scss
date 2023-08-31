@@ -10,6 +10,9 @@
 
 // variables
 
+$sidebar_bgColor: #C60917;
+$sidebar_borderColor: #760000;
+
 @mixin height {
   height: 100%;
 }
@@ -30,9 +33,10 @@
 }
 
 #sidebar {
-  min-width: max(300px, 150px);
+  min-width: max(400px, 150px);
   @include height;
-  background-color: red;
+  background-color: $sidebar_bgColor;
+  border-right: 1rem solid $sidebar_borderColor;
 }
 
 #book-view {
