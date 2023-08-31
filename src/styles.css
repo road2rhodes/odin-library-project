@@ -24,6 +24,13 @@
   background-color: red;
 }
 
+#book-view {
+  display: flex;
+  justify-content: center;
+  flex: 1 0 auto;
+  margin: 1rem 0;
+}
+
 .books {
   display: grid;
   grid-template: repeat(3, 1fr)/repeat(3, 400px);
