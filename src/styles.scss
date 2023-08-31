@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Inter:wght@100;300;600;700;900&family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,600;1,700;1,900&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  font-family: 'Raleway', Verdana, Geneva, Tahoma, sans-serif
+}
+
+.book-card {
+  width: 400px;
+  height: min-content;
+  border: 1px solid black;
+  margin: 1rem 0.5rem;
+}
