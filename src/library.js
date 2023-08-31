@@ -27,6 +27,7 @@ class Book {
         binaryNum === 1 ? this.hasRead = "yes" : this.hasRead = "no";
     }
 }
+
 const {title, author } = new Book("Everyone in This Room Will Someday Be Dead", "Emily R. Austin", 256, 2021, false);
 
 function addBookCard(title, author, pages,yearPublished, hasRead) {
@@ -40,7 +41,7 @@ function addBookCard(title, author, pages,yearPublished, hasRead) {
     let propValue = newBook[prop]
 
     let temp = document.createElement("p")
-        temp.textContent = `${propName}: ${propValue}`;
+        temp.innerHTML = `<strong>${propName}</strong>: ${propValue}`;
         document.body.appendChild(temp)
   }
 }
