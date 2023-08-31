@@ -13,6 +13,7 @@
 $sidebar_bgColor: #C60917;
 $sidebar_borderColor: #760000;
 $bookview_bgColor: #F1A66A;
+$bookcard_shadow: #cfa2a2;
 
 @mixin height {
   height: 100%;
@@ -58,7 +59,7 @@ $bookview_bgColor: #F1A66A;
   .book-card {
     background-color: #ffffff;
     padding: 0.5rem 1rem;
-    border: 1px solid black;
+    border: 1px solid $bookcard_shadow;
   }
 }
 
