@@ -12,6 +12,7 @@
 
 $sidebar_bgColor: #C60917;
 $sidebar_borderColor: #760000;
+$bookview_bgColor: #F1A66A;
 
 @mixin height {
   height: 100%;
@@ -43,7 +44,8 @@ $sidebar_borderColor: #760000;
   @include flex;
   justify-content: center;
   flex: 1 0 auto;
-  margin: 1rem 0;
+  padding: 1rem 0;
+  background-color: $bookview_bgColor;
 }
 
 .books {
@@ -54,6 +56,7 @@ $sidebar_borderColor: #760000;
   gap: 1rem;
 
   .book-card {
+    background-color: #ffffff;
     padding: 0.5rem 1rem;
     border: 1px solid black;
   }
