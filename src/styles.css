@@ -38,6 +38,16 @@
   width: 100%;
 }
 
+.add_books {
+  width: 100%;
+}
+.add_books label {
+  font-weight: 600;
+}
+.add_books fieldset {
+  padding: 1rem;
+  margin-top: 1rem;
+}
 .add_books li {
   list-style-type: none;
 }
