@@ -15,10 +15,13 @@
 
 #library_container {
   display: flex;
+  flex-direction: row;
   height: 100%;
 }
 
 #sidebar {
+  display: flex;
+  flex-direction: column;
   min-width: 400px;
   height: 100%;
   background-color: #C60917;
@@ -28,6 +31,7 @@
 
 #book-view {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   flex: 1 0 auto;
   padding: 1rem 0;

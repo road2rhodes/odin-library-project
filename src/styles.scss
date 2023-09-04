@@ -20,8 +20,9 @@ $bookcard_shadow: #cfa2a2;
   height: 100%;
 }
 
-@mixin flex {
+@mixin flex($direction) {
   display: flex;
+  flex-direction: $direction;
 }
 
 //  Blocks
@@ -31,11 +32,12 @@ $bookcard_shadow: #cfa2a2;
 }
 
 #library_container {
-  @include flex;
+  @include flex(row);
   @include height;
 }
 
 #sidebar {
+  @include flex(column);
   min-width: max(400px, 150px);
   @include height;
   background-color: $sidebar_bgColor;
@@ -44,7 +46,7 @@ $bookcard_shadow: #cfa2a2;
 }
 
 #book-view {
-  @include flex;
+  @include flex(row);
   justify-content: center;
   flex: 1 0 auto;
   padding: 1rem 0;
