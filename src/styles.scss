@@ -12,6 +12,7 @@
 
 $sidebar_bgColor: #C60917;
 $sidebar_borderColor: #760000;
+$sidebar_textColor: #FFFFFF;
 $bookview_bgColor: #F1A66A;
 $bookcard_shadow: #cfa2a2;
 
@@ -39,6 +40,7 @@ $bookcard_shadow: #cfa2a2;
   @include height;
   background-color: $sidebar_bgColor;
   border-right: 1rem solid $sidebar_borderColor;
+  color: $sidebar_textColor;
 }
 
 #book-view {
