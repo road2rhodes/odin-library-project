@@ -38,6 +38,10 @@
   width: 100%;
 }
 
+.add_books li {
+  list-style-type: none;
+}
+
 #book-view {
   display: flex;
   flex-direction: row;

@@ -52,6 +52,12 @@ $bookcard_shadow: #cfa2a2;
   margin-top: 1rem;
   width: 100%;
 }
+
+.add_books {
+  & li {
+    list-style-type: none;
+  }
+}
 #book-view {
   @include flex(row);
   justify-content: center;
