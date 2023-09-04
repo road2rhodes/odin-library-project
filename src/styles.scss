@@ -76,8 +76,17 @@ $bookcard_shadow: #cfa2a2;
 
 // Elements
 
-#addBookButton {
-  flex: 1;
+#addBookBtn {
+  flex: 1 0 auto;
+  border: none;
+  height: 2rem;
+  font-weight: 700;
+
+  &:active {
+    background-color: $bookview_bgColor;
+    color: $sidebar_textColor;
+    border: 1px solid $sidebar_textColor;
+  }
 }
 
 // Modifiers

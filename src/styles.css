@@ -60,6 +60,14 @@
   border: 1px solid #cfa2a2;
 }
 
-#addBookButton {
-  flex: 1;
+#addBookBtn {
+  flex: 1 0 auto;
+  border: none;
+  height: 2rem;
+  font-weight: 700;
+}
+#addBookBtn:active {
+  background-color: #F1A66A;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
 }/*# sourceMappingURL=styles.css.map */
