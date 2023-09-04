@@ -27,6 +27,10 @@ $_1r: 1rem;
   flex-direction: $direction;
 }
 
+@mixin bdr_1px($color) {
+  border: 1px solid $color;
+}
+
 //  Blocks
 
 #site_container {
@@ -65,6 +69,7 @@ $_1r: 1rem;
   & fieldset {
     padding: $_1r;
     margin-top: $_1r;
+    @include bdr_1px($bookcard_shadow)
   }
   & li {
     list-style-type: none;
@@ -88,7 +93,7 @@ $_1r: 1rem;
   .book-card {
     background-color: #ffffff;
     padding: 0.5rem $_1r;
-    border: 1px solid $bookcard_shadow;
+    @include bdr_1px($bookcard_shadow);
   }
 }
 
@@ -103,7 +108,7 @@ $_1r: 1rem;
   &:active {
     background-color: $bookview_bgColor;
     color: $sidebar_textColor;
-    border: 1px solid $sidebar_textColor;
+    @include bdr_1px($sidebar_textColor);
   }
 }
 
