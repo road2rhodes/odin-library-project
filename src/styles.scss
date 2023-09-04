@@ -38,6 +38,8 @@ $bookcard_shadow: #cfa2a2;
 
 #sidebar {
   @include flex(column);
+  align-items: center;
+  padding: 1rem 0.5rem;
   min-width: max(400px, 150px);
   @include height;
   background-color: $sidebar_bgColor;
