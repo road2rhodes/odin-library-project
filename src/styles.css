@@ -31,6 +31,13 @@
   color: #FFFFFF;
 }
 
+.nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  width: 100%;
+}
+
 #book-view {
   display: flex;
   flex-direction: row;
@@ -51,4 +58,8 @@
   background-color: #ffffff;
   padding: 0.5rem 1rem;
   border: 1px solid #cfa2a2;
+}
+
+#addBookButton {
+  flex: 1;
 }/*# sourceMappingURL=styles.css.map */

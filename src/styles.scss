@@ -47,6 +47,11 @@ $bookcard_shadow: #cfa2a2;
   color: $sidebar_textColor;
 }
 
+.nav {
+  @include flex(column);
+  margin-top: 1rem;
+  width: 100%;
+}
 #book-view {
   @include flex(row);
   justify-content: center;
@@ -70,5 +75,9 @@ $bookcard_shadow: #cfa2a2;
 }
 
 // Elements
+
+#addBookButton {
+  flex: 1;
+}
 
 // Modifiers
