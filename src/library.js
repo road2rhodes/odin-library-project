@@ -52,22 +52,23 @@ const showBookCards = () => {library.collection.forEach(
 function addBookCard(title, author, pages,yearPublished, hasRead) {
 
   let newBook = new Book(title, author, pages, yearPublished, hasRead);
+  library.collection.push(newBook);
 
-  let bookCardContainer = document.createElement("div")
-      bookCardContainer.className = `book-card`
+  let bookCardContainer = document.createElement("div");
+      bookCardContainer.className = `book-card`;
 
   for (const prop in newBook) {
 
     // Abstract away background processes with variables
-    let propName = prop[0].toUpperCase()+prop.slice(1) // Capitalize properties
-    let propValue = newBook[prop]
+    let propName = prop[0].toUpperCase()+prop.slice(1);// Capitalize properties
+    let propValue = newBook[prop];
 
     
 
-    let temp = document.createElement("p")
+    let temp = document.createElement("p");
         temp.innerHTML = `<strong>${propName}</strong>: ${propValue}`;
         
-        bookCardContainer.appendChild(temp)
+        bookCardContainer.appendChild(temp);
   }
   const booksDiv = document.querySelector(".books");
   booksDiv.appendChild(bookCardContainer);
@@ -78,9 +79,10 @@ function addBookCard(title, author, pages,yearPublished, hasRead) {
 
 addBookBtn.addEventListener("click", library.showForm)
 // Use the submit event listener to check for form submission
-let bookForm = document.getElementById("book_form_container")
+let bookForm = document.getElementById("book_form_container");
     bookForm.addEventListener("submit", () => {
-      event.preventDefault();
+      event.preventDefault(); // prevents page resetting due to submit
+
       // Use elements to access the inputs from bookForm
       const title = bookForm.elements.bookTitle.value;
       const author = bookForm.elements.bookAuthor.value;
@@ -88,5 +90,8 @@ let bookForm = document.getElementById("book_form_container")
       const year = bookForm.elements.bookYear.value;
       const read = bookForm.elements.bookRead.value;
 
-      addBookCard(title, author, pages, year, read)
+      let newBook = new Book(title, author, pages, year, read);
+      library.collection.push(newBook);
+// Need to tweak so previous cards are cleared before new cards added from library collection.
+      showBookCards();
     })
