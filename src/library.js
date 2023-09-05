@@ -39,24 +39,22 @@ const starterBooks = {
   "Ways of Seeing": new Book("Ways of Seeing", "John Berger", 176, 1972, "no")
 }
 
+for (const bookTitle in starterBooks) {
+  library.collection.push(starterBooks[bookTitle]);
+}
+
 const showBookCards = () => {library.collection.forEach(
   ({title, author, pages, "Year Published": yearPublished, "Read?": hasRead}) => addBookCard(title, author, pages, yearPublished, hasRead)
   )}
 
   showBookCards();
 
-for (const bookTitle in starterBooks) {
-  library.collection.push(starterBooks[bookTitle]);
-}
-
-const {title, author } = new Book("Everyone in This Room Will Someday Be Dead", "Emily R. Austin", 256, 2021, false);
-
 function addBookCard(title, author, pages,yearPublished, hasRead) {
 
   let newBook = new Book(title, author, pages, yearPublished, hasRead);
 
   let bookCardContainer = document.createElement("div")
-        bookCardContainer.className = `book-card`
+      bookCardContainer.className = `book-card`
 
   for (const prop in newBook) {
 
