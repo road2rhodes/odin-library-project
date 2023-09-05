@@ -31,6 +31,12 @@ $_1r: 1rem;
   border: 1px solid $color;
 }
 
+@mixin btnStyling {
+  border: none;
+  height: 2rem;
+  font-weight: 700;
+}
+
 //  Blocks
 
 #site_container {
@@ -81,6 +87,7 @@ $_1r: 1rem;
     display: block;
     padding: 2px $_1r;
     margin: $_1r auto 0 auto;
+    @include btnStyling();
   }
 }
 
@@ -113,10 +120,7 @@ $_1r: 1rem;
 
 #addBookBtn {
   flex: 1 0 auto;
-  border: none;
-  height: 2rem;
-  font-weight: 700;
-
+  @include btnStyling();
   &:active {
     background-color: $bookview_bgColor;
     color: $sidebar_textColor;
