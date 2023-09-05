@@ -79,10 +79,11 @@ function addBookCard(title, author, pages,yearPublished, hasRead) {
 // Event Listeners
 
 addBookBtn.addEventListener("click", library.showForm)
-
+// Use the submit event listener to check for form submission
 let bookForm = document.getElementById("book_form_container")
     bookForm.addEventListener("submit", () => {
       event.preventDefault();
+      // Use elements to access the inputs from bookForm
       const title = bookForm.elements.bookTitle.value;
       const author = bookForm.elements.bookAuthor.value;
       const pages = bookForm.elements.bookPages.value;
