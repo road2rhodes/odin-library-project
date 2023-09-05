@@ -59,6 +59,12 @@ const showBookCards = () => {library.collection.forEach(
 
   showBookCards();
 
+const changeBookAddText = function(){
+  addBookBtn.innerHTML === "NEW BOOK"
+  ? addBookBtn.innerHTML = "CLOSE FORM"
+  : addBookBtn.innerHTML = "NEW BOOK"
+}
+
 function addBookCard(title, author, pages,yearPublished, hasRead) {
 
   let newBook = new Book(title, author, pages, yearPublished, hasRead);
@@ -86,7 +92,7 @@ function addBookCard(title, author, pages,yearPublished, hasRead) {
 }
 
 // Event Listeners
-
+addBookBtn.addEventListener("click", changeBookAddText)
 addBookBtn.addEventListener("click", library.showForm)
 // Use the submit event listener to check for form submission
 let bookForm = document.getElementById("book_form_container");
