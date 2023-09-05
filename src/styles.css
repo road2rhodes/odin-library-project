@@ -63,10 +63,6 @@
   font-weight: 700;
 }
 
-#book_form_container {
-  visibility: hidden;
-}
-
 #book-view {
   display: flex;
   flex-direction: row;
@@ -99,4 +95,12 @@
   background-color: #F1A66A;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
+}
+
+.formInvisible {
+  visibility: hidden;
+}
+
+.formVisible {
+  visibility: visible;
 }/*# sourceMappingURL=styles.css.map */

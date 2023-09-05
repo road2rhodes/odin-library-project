@@ -10,8 +10,18 @@ const library = {
       library.collection.splice(bookIndex, 1);
   },
   showForm(){
+
     let form = book_form_container;
-    form.style.visibility = "visible";
+
+    if (form.classList.value === "formVisible") {
+
+      form.classList.remove("formVisible");
+      form.classList.add("formInvisible");
+      return;
+    }
+
+    form.classList.remove("formInvisible");
+    form.classList.add("formVisible");
   }
   
 }

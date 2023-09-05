@@ -92,7 +92,7 @@ $_1r: 1rem;
 }
 
 #book_form_container {
-  visibility: hidden;
+
 }
 #book-view {
   @include flex(row);
@@ -129,3 +129,11 @@ $_1r: 1rem;
 }
 
 // Modifiers
+
+.formInvisible {
+  visibility: hidden;
+}
+
+.formVisible {
+  visibility: visible;
+}
