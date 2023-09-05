@@ -69,10 +69,17 @@ $_1r: 1rem;
   & fieldset {
     padding: $_1r;
     margin-top: $_1r;
-    @include bdr_1px($bookcard_shadow)
+    @include bdr_1px($bookcard_shadow);
   }
+
   & li {
     list-style-type: none;
+  }
+
+  & button {
+    display: block;
+    padding: 2px $_1r;
+    margin: $_1r auto 0 auto;
   }
 }
 #book-view {
