@@ -80,8 +80,14 @@ function addBookCard(title, author, pages,yearPublished, hasRead) {
 
 addBookBtn.addEventListener("click", library.showForm)
 
-let submitBtn = document.querySelector('button[type="submit"]')
-    submitBtn.addEventListener("click", () => {
+let bookForm = document.getElementById("book_form_container")
+    bookForm.addEventListener("submit", () => {
       event.preventDefault();
-      addBookCard(bookTitle, bookAuthor, bookPages, bookYear, bookRead)
+      const title = bookForm.elements.bookTitle.value;
+      const author = bookForm.elements.bookAuthor.value;
+      const pages = bookForm.elements.bookPages.value;
+      const year = bookForm.elements.bookYear.value;
+      const read = bookForm.elements.bookRead.value;
+
+      addBookCard(title, author, pages, year, read)
     })
