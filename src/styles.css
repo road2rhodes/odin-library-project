@@ -51,6 +51,8 @@
 }
 .add_books li {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
 }
 .add_books button {
   display: block;
