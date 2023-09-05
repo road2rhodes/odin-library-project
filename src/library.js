@@ -9,6 +9,10 @@ const library = {
       let bookIndex = library.collection.indexOf(book);
       library.collection.splice(bookIndex, 1);
   },
+  showForm(){
+    let form = book_form_container;
+    form.style.visibility = "visible";
+  }
   
 }
 
@@ -72,3 +76,6 @@ function addBookCard(title, author, pages,yearPublished, hasRead) {
 
 }
 
+// Event Listeners
+
+addBookBtn.addEventListener("click", library.showForm)

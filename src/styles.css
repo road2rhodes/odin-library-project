@@ -60,6 +60,10 @@
   margin: 1rem auto 0 auto;
 }
 
+#book_form_container {
+  visibility: hidden;
+}
+
 #book-view {
   display: flex;
   flex-direction: row;

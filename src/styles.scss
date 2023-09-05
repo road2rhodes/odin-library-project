@@ -83,6 +83,10 @@ $_1r: 1rem;
     margin: $_1r auto 0 auto;
   }
 }
+
+#book_form_container {
+  visibility: hidden;
+}
 #book-view {
   @include flex(row);
   justify-content: center;
