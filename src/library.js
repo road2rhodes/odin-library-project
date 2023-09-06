@@ -75,8 +75,8 @@ function addBookCard(bookObject) {
 
 //  const {title, author, pages, "Year Published": yearPublished, "Read?": hasRead} = object;
 
-  let bookCardContainer = document.createElement("div");
-      bookCardContainer.className = `book-card`;
+  let bookCard = document.createElement("div");
+      bookCard.className = `book-card`;
 
   for (const prop in bookObject) {
 
@@ -89,9 +89,9 @@ function addBookCard(bookObject) {
     let temp = document.createElement("p");
         temp.innerHTML = `<strong>${propName}</strong>: ${propValue}`;
         
-        bookCardContainer.appendChild(temp);
+        bookCard.appendChild(temp);
   }
-  booksDiv.appendChild(bookCardContainer);
+  booksDiv.appendChild(bookCard);
 
 }
 
