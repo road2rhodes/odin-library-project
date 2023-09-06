@@ -77,6 +77,7 @@ function addBookCard(bookObject) {
 
   let bookCard = document.createElement("div");
       bookCard.className = `book-card`;
+      bookCard.setAttribute("data-bookNumber", `${library.collection.indexOf(bookObject)}`)
 
   for (const prop in bookObject) {
 
@@ -88,6 +89,9 @@ function addBookCard(bookObject) {
 
     let temp = document.createElement("p");
         temp.innerHTML = `<strong>${propName}</strong>: ${propValue}`;
+    // let removeLink = document.createElement("a");
+    //     removeLink.href = "#";
+    //     removeLink.addEventListener("click",removefromLibrary)
         
         bookCard.appendChild(temp);
   }
