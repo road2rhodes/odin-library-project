@@ -7,6 +7,7 @@ const library = {
   },
   removefromLibrary: (index) => {
       library.collection.splice(index, 1);
+      showBookCards();
   },
   showForm(){
 
@@ -100,7 +101,7 @@ function addBookCard(bookObject) {
         removeLink.href = "#";
         removeLink.textContent = "Remove";
         removeLink.addEventListener("click",() =>
-        removefromLibrary(library.collection[bookIndex]));
+        removefromLibrary(bookIndex));
         removeLink.addEventListener("click", showBookCards)
         bookCard.appendChild(removeLink);
 
