@@ -68,9 +68,13 @@ const showBookCards = () => {
   showBookCards();
 
 const changeBookAddText = function(){
-  addBookBtn.innerHTML === "NEW BOOK"
-  ? addBookBtn.innerHTML = "CLOSE FORM"
-  : addBookBtn.innerHTML = "NEW BOOK"
+
+  const btnTxtOpen = "NEW BOOK";
+  const btnTxtClose = "CLOSE FORM";
+
+  addBookBtn.innerHTML === btnTxtOpen
+  ? addBookBtn.innerHTML = btnTxtClose
+  : addBookBtn.innerHTML = btnTxtOpen
 }
 
 function addBookCard(bookObject) {
