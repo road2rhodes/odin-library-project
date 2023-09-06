@@ -30,7 +30,7 @@ const library = {
   
 }
 
-const { addToLibrary, removefromLibrary, booksDiv, showForm } = library
+const { addToLibrary, removefromLibrary, booksDiv, showForm, clearBookDiv } = library
 
 class Book {
     constructor(title, author, pages, yearPublished, hasRead) {
@@ -113,6 +113,6 @@ let bookForm = document.getElementById("book_form_container");
       let newBook = new Book(title, author, pages, year, read);
       addToLibrary(newBook);
 // Need to tweak so previous cards are cleared before new cards added from library collection.
-      
+      clearBookDiv();
       showBookCards();
     })
