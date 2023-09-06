@@ -5,9 +5,8 @@ const library = {
   addToLibrary: (book) => {
     library.collection.push(book);
   },
-  removefromLibrary: (book) => {
-      let bookIndex = library.collection.indexOf(book);
-      library.collection.splice(bookIndex, 1);
+  removefromLibrary: (index) => {
+      library.collection.splice(index, 1);
   },
   showForm(){
 
@@ -59,7 +58,9 @@ for (const bookTitle in starterBooks) {
   library.collection.push(starterBooks[bookTitle]);
 }
 
-const showBookCards = () => {library.collection.forEach(
+const showBookCards = () => {
+  clearBookDiv();
+  library.collection.forEach(
   book => addBookCard(book)
   )}
 
@@ -74,10 +75,10 @@ const changeBookAddText = function(){
 function addBookCard(bookObject) {
 
 //  const {title, author, pages, "Year Published": yearPublished, "Read?": hasRead} = object;
-
+  let bookIndex = library.collection.indexOf(bookObject)
   let bookCard = document.createElement("div");
       bookCard.className = `book-card`;
-      bookCard.setAttribute("data-bookNumber", `${library.collection.indexOf(bookObject)}`)
+      bookCard.setAttribute("data-bookNumber", `${bookIndex}`)
 
   for (const prop in bookObject) {
 
@@ -98,7 +99,9 @@ function addBookCard(bookObject) {
   let removeLink = document.createElement("a");
         removeLink.href = "#";
         removeLink.textContent = "Remove";
-        removeLink.addEventListener("click",removefromLibrary)
+        removeLink.addEventListener("click",() =>
+        removefromLibrary(library.collection[bookIndex]));
+        removeLink.addEventListener("click", showBookCards)
         bookCard.appendChild(removeLink);
 
   booksDiv.appendChild(bookCard);
