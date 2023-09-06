@@ -60,7 +60,7 @@ for (const bookTitle in starterBooks) {
 }
 
 const showBookCards = () => {library.collection.forEach(
-  ({title, author, pages, "Year Published": yearPublished, "Read?": hasRead}) => addBookCard(title, author, pages, yearPublished, hasRead)
+  book => addBookCard(book)
   )}
 
   showBookCards();
@@ -71,19 +71,18 @@ const changeBookAddText = function(){
   : addBookBtn.innerHTML = "NEW BOOK"
 }
 
-function addBookCard(title, author, pages,yearPublished, hasRead) {
+function addBookCard(bookObject) {
 
-  let newBook = new Book(title, author, pages, yearPublished, hasRead);
-  library.collection.push(newBook);
+//  const {title, author, pages, "Year Published": yearPublished, "Read?": hasRead} = object;
 
   let bookCardContainer = document.createElement("div");
       bookCardContainer.className = `book-card`;
 
-  for (const prop in newBook) {
+  for (const prop in bookObject) {
 
     // Abstract away background processes with variables
     let propName = prop[0].toUpperCase()+prop.slice(1);// Capitalize properties
-    let propValue = newBook[prop];
+    let propValue = bookObject[prop];
 
     
 
@@ -112,10 +111,8 @@ let bookForm = document.getElementById("book_form_container");
       const read = bookForm.elements.bookRead.value;
 
       let newBook = new Book(title, author, pages, year, read);
-      library.collection.push(newBook);
+      addToLibrary(newBook);
 // Need to tweak so previous cards are cleared before new cards added from library collection.
-      while (booksDiv) {
-        booksDiv.removeChild(booksDiv.firstChild);
-      }
+      
       showBookCards();
     })
