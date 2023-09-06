@@ -60,7 +60,7 @@ const starterBooks = {
 }
 
 for (const bookTitle in starterBooks) {
-  library.collection.push(starterBooks[bookTitle]);
+  addToLibrary(starterBooks[bookTitle]);
 }
 
 const showBookCards = () => {
