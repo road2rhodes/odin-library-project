@@ -22,9 +22,15 @@ const library = {
 
     form.classList.remove("formInvisible");
     form.classList.add("formVisible");
+  },
+  booksDiv: document.querySelector(".books"),
+  clearBookDiv(){
+    booksDiv.innerHTML = "";
   }
   
 }
+
+const { addToLibrary, removefromLibrary, booksDiv, showForm } = library
 
 class Book {
     constructor(title, author, pages, yearPublished, hasRead) {
@@ -86,7 +92,6 @@ function addBookCard(title, author, pages,yearPublished, hasRead) {
         
         bookCardContainer.appendChild(temp);
   }
-  const booksDiv = document.querySelector(".books");
   booksDiv.appendChild(bookCardContainer);
 
 }
@@ -109,5 +114,8 @@ let bookForm = document.getElementById("book_form_container");
       let newBook = new Book(title, author, pages, year, read);
       library.collection.push(newBook);
 // Need to tweak so previous cards are cleared before new cards added from library collection.
+      while (booksDiv) {
+        booksDiv.removeChild(booksDiv.firstChild);
+      }
       showBookCards();
     })
