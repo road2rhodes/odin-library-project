@@ -9,6 +9,11 @@ const library = {
       library.collection.splice(index, 1);
       showBookCards();
   },
+  showBookCards: () => {
+    clearBookCards();
+    library.collection.forEach(
+    book => addBookCard(book)
+    )},
   showForm(){
 
     let form = book_form_container;
@@ -34,7 +39,7 @@ const library = {
   
 }
 
-const { addToLibrary, removefromLibrary, booksDiv, showForm, clearBookCards } = library
+const { addToLibrary, removefromLibrary, booksDiv, showForm, showBookCards, clearBookCards } = library
 
 class Book {
     constructor(title, author, pages, yearPublished, hasRead) {
@@ -63,13 +68,8 @@ for (const bookTitle in starterBooks) {
   addToLibrary(starterBooks[bookTitle]);
 }
 
-const showBookCards = () => {
-  clearBookCards();
-  library.collection.forEach(
-  book => addBookCard(book)
-  )}
 
-  showBookCards();
+
 
 const changeBookAddText = function(){
 
@@ -116,6 +116,8 @@ function addBookCard(bookObject) {
   booksDiv.appendChild(bookCard);
 
 }
+
+showBookCards();
 
 // Event Listeners
 addBookBtn.addEventListener("click", changeBookAddText)
