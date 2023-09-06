@@ -17,11 +17,15 @@ const library = {
 
       form.classList.remove("formVisible");
       form.classList.add("formInvisible");
-      return;
+
+    } else {
+
+      form.classList.remove("formInvisible");
+      form.classList.add("formVisible");
+      
     }
 
-    form.classList.remove("formInvisible");
-    form.classList.add("formVisible");
+    
   },
   booksDiv: document.querySelector(".books"),
   clearBookDiv(){
@@ -73,8 +77,8 @@ const changeBookAddText = function(){
   const btnTxtClose = "CLOSE FORM";
 
   addBookBtn.innerHTML === btnTxtOpen
-  ? addBookBtn.innerHTML = btnTxtClose
-  : addBookBtn.innerHTML = btnTxtOpen
+? addBookBtn.innerHTML = btnTxtClose
+: addBookBtn.innerHTML = btnTxtOpen
 }
 
 function addBookCard(bookObject) {
