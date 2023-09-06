@@ -89,12 +89,18 @@ function addBookCard(bookObject) {
 
     let temp = document.createElement("p");
         temp.innerHTML = `<strong>${propName}</strong>: ${propValue}`;
-    // let removeLink = document.createElement("a");
-    //     removeLink.href = "#";
-    //     removeLink.addEventListener("click",removefromLibrary)
+    
         
-        bookCard.appendChild(temp);
+        bookCard.appendChild(temp)
+                
   }
+
+  let removeLink = document.createElement("a");
+        removeLink.href = "#";
+        removeLink.textContent = "Remove";
+        removeLink.addEventListener("click",removefromLibrary)
+        bookCard.appendChild(removeLink);
+
   booksDiv.appendChild(bookCard);
 
 }
